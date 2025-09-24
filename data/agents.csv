@@ -1,0 +1,11 @@
+Matricule,Nom,Prenom,Service,Email,Salaire,DateEmbauche,Actif
+A001,Dupont,Alice,Finances,alice.dupont@mairie.fr,2450.50,2021-02-15,1
+A002,Martin,Bob,RH,bob.martin@mairie.fr,2280,2020-11-03,1
+A003,Leroy,Chloé,Urbanisme,chloe.leroy@mairie.fr,2399.99,2019-09-10,0
+A004,Bernard,David,Informatique,david.bernard@mairie.fr,3000,2018-05-22,1
+A005,Petit,Emma,Communication,emma.petit@mairie.fr,2100.75,2022-01-10,1
+A006,Robert,Farid,DSI,farid.robert@mairie.fr,3200,2017-03-14,1
+A007,Roux,Gaëlle,Finances,gaelle.roux@mairie.fr,2550,2023-06-01,1
+A008,Moreau,Hugo,Éducation,hugo.moreau@mairie.fr,2150.40,2020-02-28,0
+A009,Laurent,Inès,Santé,ines.laurent@mairie.fr,2600,2016-10-05,1
+A010,Simon,Jules,Logistique,jules.simon@mairie.fr,1999.95,2024-04-18,1

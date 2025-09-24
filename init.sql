@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS etl_demo CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE etl_demo;
+
+DROP TABLE IF EXISTS agents;
+CREATE TABLE agents (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  matricule VARCHAR(20) NOT NULL,
+  nom VARCHAR(50) NOT NULL,
+  prenom VARCHAR(50) NOT NULL,
+  service VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  salaire DECIMAL(10,2) NOT NULL,
+  date_embauche DATE NOT NULL,
+  actif TINYINT(1) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+DROP TABLE IF EXISTS agents_staging;
+CREATE TABLE agents_staging LIKE agents;
+ALTER TABLE agents_staging MODIFY COLUMN id INT NULL;

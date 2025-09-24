@@ -1,0 +1,21 @@
+services:
+  hopweb:
+    image: apache/hop-web:latest
+    container_name: hop_web
+    restart: unless-stopped
+    ports:
+      - "8086:8080"                  # UI Hop Web -> http://localhost:8086
+    environment:
+      HOP_SERVER_USER: admin
+      HOP_SERVER_PASS: admin
+      # Très important : dossiers scannés par Hop pour charger les drivers JDBC
+      HOP_SHARED_JDBC_FOLDERS: "/opt/hop-jdbc,/usr/local/hop/lib/jdbc"
+    volumes:
+      - ./data:/files/data:ro        # ton CSV sera /files/data/agents.csv dans Hop
+      - ./hop-project:/files/project # Hop enregistrera les pipelines ici
+      # On fournit les drivers JDBC à Hop :
+      - /usr/share/java:/opt/hop-jdbc:ro
+      - /usr/share/java/mariadb-java-client.jar:/usr/local/hop/lib/jdbc/mariadb-java-client.jar:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # accès au MariaDB de l'hôte (3307)
+
